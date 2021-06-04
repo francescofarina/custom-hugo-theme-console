@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="image-grid">
+    {{ if not .Params.draft }}
+    <div class="post">
+        <p>
+        <h1>{{ .Title }}</h1>
+        <h4>{{ $length := len .Params.authors }}
+            {{ range $i, $sequence := .Params.authors }}
+            {{ $sequence }}{{ if (le $i (add $length -2))}}, {{end}}
+            {{ end }}</h4>
+        <p>First release: {{ .PublishDate.Format "Jan. 2, 2006" }}</p>
+        {{ with .Params.code }}
+        // <a href="{{ . }}">code</a>
+        {{ end }}
+        {{ with .Params.documentation }}
+        // <a href="{{ . }}">documentation</a>
+        {{ end }}
+        </p>
+        </p>
+        <p>{{ with .Params.description }}
+            {{ . }}
+            {{ end }}</p>
+        <p>{{ .Content }}</p>
+    </div>
+    {{ end }}
+</div>
+<br /><br />
+{{ end }}
