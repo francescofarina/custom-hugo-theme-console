@@ -3,7 +3,7 @@
 <br />
 A list of my publications by type
 
-<h1>Journal</h1>
+<h1>Journals</h1>
 <div class="posts-list">
     {{ range sort .Data.Pages "Date" "desc" }}
     {{ if not .Params.draft }}
@@ -24,7 +24,7 @@ A list of my publications by type
     {{ end }}
 </div>
 
-<h1>Conference</h1>
+<h1>Conferences and workshops</h1>
 <div class="posts-list">
     {{ range sort .Data.Pages "Date" "desc" }}
     {{ if not .Params.draft }}
@@ -45,7 +45,7 @@ A list of my publications by type
     {{ end }}
 </div>
 
-<h1>Preprint</h1>
+<h1>Preprints</h1>
 <div class="posts-list">
     {{ range sort .Data.Pages "Date" "desc" }}
     {{ if not .Params.draft }}
